@@ -12,14 +12,15 @@
   --main-font: "Rocksalt", cursive;
   --secondary-font: "Poiret One", cursive;
   --body-font: "Montserrat", sans-serif;
-  --light-green-color: #a7ff83;
-  --light-blue-color: #22d1ee;
-  --light-white-color: #e2f3f5;
+  --light-green: #45EBA5;
+  --blue: #18A0FB;
+  --light-blue: #A3DBFB;
+  --white: #e2f3f5;
 }
 
 html {
   font-family: var(--body-font), sans-serif;
-  color: var(--light-white-color);
+  color: var(--white);
   scroll-behavior: smooth;
 }
 
@@ -35,12 +36,13 @@ a {
   text-decoration: none;
   font-family: var(--body-font);
   font-weight: 700;
-  color: #18A0FB;
+  color: var(--blue);
 }
 
 p {
+  font-family: var(--body-font);
   font-size: 1.6rem;
-  color: rgba(220, 232, 240, 0.85);
+  color: var(--white);
   margin: 10px auto;
 }
 
@@ -79,7 +81,7 @@ header {
 }
 
 .menu-toggle {
-  color: var(--light-white-color);
+  color: var(--white);
   text-shadow: 2px 2px 4px #232225;
   font-size: 3rem;
   cursor: pointer;
@@ -91,7 +93,7 @@ header {
 }
 
 .menu-toggle:hover {
-  color: var(--light-blue-color);
+  color: var(--blue);
 }
 
 .fa-times {
@@ -107,7 +109,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 75%;
+  width: 60%;
   height: 100vh;
   background-color: #585858;
   opacity: 0.9;
@@ -152,22 +154,20 @@ header {
 
 .nav-link {
   text-transform: uppercase;
-  font-size: 1.6rem;
+  font-size: 2rem;
   transition: all 0.5s;
 }
 
 .nav-link:focus, .nav-link:hover {
-  color: var(--light-white-color);
-  text-decoration: underline;
-  text-decoration-style: wavy;
+  color: var(--white);
 }
 
-/* HERO section*/
+/************ start HERO section ************/
 
-.hero {
+#hero {
   width: 100%;
   height: 100vh;
-  background: url("images/image1.jpg") center no-repeat;
+  background: url("images/hero.jpg") center no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -177,7 +177,7 @@ header {
 
 .hero-content {
   display: flex;
-  max-width: 680px;
+  max-width: 75vw;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
@@ -186,25 +186,22 @@ header {
   right: -100px;
 }
 
-.headline {
-  /* position: absolute;
-  left: 20%;
-  top: 65%;
-  transform: translate(-20%, -65%); */
+.hero-content h1 {
   filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 1));
   font-weight: 700;
-  font-size: 6rem;
+  font-size: 3.4rem;
   letter-spacing: 2px;
+  margin-left: -2px;
   color: #A3DBFB;
   text-align: left;
 }
 
 .green-text {
-  color: #45EBA5;
-  opacity: .75;
+  color: var(--light-green);
+  opacity: .85;
 }
 
-.buttons {
+.hero-content .buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -214,20 +211,20 @@ header {
 }
 
 .cta-btn {
-  min-width: 150px;
+  min-width: 120px;
   text-transform: uppercase;
   font-size: 1.4rem;
-  background-color: #A3DBFB;
-  padding: 15px;
-  margin: 10px;
+  background-color: var(--light-blue);
+  padding: 12px;
+  margin: 12px;
   color: #000;
-  transition: background-color 0.5s;
+  transition: all 0.5s;
 }
 
 .cta-btn:focus, .cta-btn:hover {
-  color: var(--light-white-color);
-  background-color: var(--light-blue-color);
-  box-shadow: 0px 0px 10px 3px #18A0FB;
+  color: var(--white);
+  background-color: var(--blue);
+  box-shadow: 0px 0px 10px 0px #000000 inset;
 }
 
 .shop-btn {
@@ -254,27 +251,9 @@ header {
 }
 
 .bubbles img {
-  width: 50px;
   transform: scale(0);
   opacity: 0;
   animation: bubble 8s linear infinite;
-}
-
-@keyframes bubble {
-  0% {
-    transform: translateY(0) rotate(0deg) scale(.1);
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) rotate(360deg) scale(1.5);
-    opacity: 0;
-  }
 }
 
 .bubbles img:nth-child(1) {
@@ -317,11 +296,11 @@ header {
   width: 50px;
 }
 
-/* end HERO */
+/************ end HERO section ************/
 
-/* FEATURES */
+/************ start FEATURES section ************/
 
-.about {
+#about {
   background-color: #2D3134;
   align-items: center;
   justify-content: space-between;
@@ -329,46 +308,54 @@ header {
 
 .about-content {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 20px;
-}
-
-.about-content .features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 50px;
-}
-
-.about-content .features .features-card {
-  width: 400px;
-  height: 400px;
-  padding: 40px;
-  background: rgba(85, 90, 134, 0.85);
-  box-shadow: 0px 0px 20px 5px #18A0FB;
-  border-radius: 25px;
-}
-
-.about-content .features-headline {
-  display: flex;
-  position: relative;
   flex-direction: column;
-  text-justify: distribute;
-  text-align: justify;
-  max-width: 40%;
-  margin-left: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
-.about-content .features-headline h1 {
-  text-align: center;
+.features-boxcards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  gap: 3rem;
+}
+
+.features-boxcards .card {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 250px;
+  padding: 2rem;
+  background: #2D3134;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  transition: 1s;
+}
+
+.fa-check {
+  color: var(--light-green);
   font-size: 4rem;
-  padding: 0 30px;
-  font-family: 'Poppins';
-  color: #A3DBFB;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.about-content .features-headline p {
-  padding: 0px 20px 0px;
+.features-boxcards .card p {
+  text-align: justify;
+  text-justify: distribute;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+
+.features-boxcards .card h5 {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--light-green);
+  /* small-text-shadow */
+  text-shadow: 1px 1px 10px #000000;
 }
 
 .underline {
@@ -378,16 +365,154 @@ header {
 .underline::after {
   content: " ";
   position: absolute;
-  background-color: var(--light-green-color);
+  background-color: var(--light-green);
   width: 100%;
   height: 2px;
   left: 0;
   bottom: -3px;
 }
 
+.features-description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.headline {
+  text-align: center;
+  font-size: 3.6rem;
+  margin: 5rem 0;
+  padding: 0px;
+  font-family: 'Poppins';
+  color: var(--light-blue);
+  text-shadow: 1px 1px 10px #0000007c;
+}
+
+.features-description p {
+  padding: 0 15%;
+  font-size: 1.6rem;
+  text-justify: distribute;
+  text-align: justify;
+}
+
+#gallery {
+  background-color: #2D3134;
+}
+
+/* GALLERY */
+
+.gallery-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gallery-content .headline {}
+
+.gallery-content .description {
+  width: 70%;
+  margin: 0 0 5rem 0;
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+  max-width: 85%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+
+.galleryImage {
+  display: none;
+}
+
+/* Next & previous buttons */
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 2.5rem;
+  user-select: none;
+  transition: 0.5s;
+}
+
+/* Position the "next button" to the right */
+
+.prev {
+  left: -45px;
+  border-radius: 10px 0 0 10px;
+}
+
+.next {
+  right: -45px;
+  border-radius: 0 10px 10px 0;
+}
+
+/* On prev/next arrow hover, add a semi-transparent black background */
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--blue)
+}
+
+/* Gallery Image Caption text */
+
+.caption-text {
+  color: var(--white);
+  text-shadow: 0px 0px 5px #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding: .8rem 1.2rem;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/5 etc) */
+
+.number-text {
+  color: var(--white);
+  text-shadow: 0px 0px 5px #000000;
+  font-size: 1.8rem;
+  padding: .8rem 1.2rem;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  margin: 0 5px;
+  background-color: var(--blue);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #12588659;
+}
+
 /* end FEATURES */
 
-@media screen and (min-width: 1035px) {
+/* screens larger than 1035px */
+
+@media screen and (min-width: 1230px) {
+  /******************* HOME section**************************/
   .logo {
     flex-shrink: 1;
   }
@@ -429,12 +554,90 @@ header {
     margin-left: -1px;
   }
   .nav-link:focus, .nav-link:hover {
-    color: #A3DBFB;
-    box-shadow: 0px 2px 3px 2px #18A0FB;
-    text-decoration: none;
-    text-decoration-style: initial;
-    font-size: 2rem;
-    letter-spacing: 1px;
-    margin-left: -1px;
+    text-decoration: underline;
+  }
+  .nav-link:active {
+    color: var(--white);
+  }
+  .hero-content h1 {
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 1));
+    font-size: 4rem;
+  }
+  /******************* ABOUT section**************************/
+  .about-content {
+    flex-direction: row;
+    margin: 5rem 0;
+  }
+  .features-boxcards {
+    align-items: flex-start;
+    margin: 0;
+  }
+  .features-boxcards .card {
+    width: 280px;
+    height: 280px;
+  }
+  .features-boxcards .card p {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+  .features-description {
+    margin: 0;
+  }
+  .features-description .headline {
+    align-self: center;
+    margin: initial;
+  }
+  .features-description p {
+    align-items: flex-start;
+    margin-top: 0;
+    padding: 0 5rem;
+  }
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  /******************* GALLERY section**************************/
+}
+
+/******************* ANIMATIONS **************************/
+
+/* gallery picture fade animation */
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .2
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .2
+  }
+  to {
+    opacity: 1
+  }
+}
+
+/* bubbles animation */
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(.1);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg) scale(1.5);
+    opacity: 0;
   }
 }
