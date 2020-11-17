@@ -17,6 +17,7 @@
     </head>
 
     <body>
+        <!------------------------------------------ H E A D E R  section ------------------------------------------>
         <header>
             <!-- LOGO -->
             <a href="index.html" class="logo">
@@ -28,8 +29,8 @@
                     <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li class="nav-item"><a href="#prices" class="nav-link">Prices</a></li>
                     <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li class="nav-item"><a href="#shop" class="nav-link">Shop</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -39,11 +40,10 @@
                 <i class="fas fa-times"></i>
             </div>
         </header>
-        <!-- END HEADER -->
-
-        <!-- HERO SECTION -->
+        <!--------------------------------------------- H O M E section --------------------------------------------->
         <section class="hero" id="hero">
             <div class="container">
+                <!-- headline + buttons  -->
                 <div class="hero-content">
                     <h1 class="headline">Custom 3D-Designs<br>Inspired by <span class="green-text">nature</span></h1>
                     <div class="buttons">
@@ -51,7 +51,7 @@
                         <a href="#" class="cta-btn more-btn">More</a>
                     </div>
                 </div>
-                <!-- animated bubbles  -->
+                <!-- bubbles  -->
                 <div class="bubbles">
                     <img src="images/bubble.png" alt="bubble" width="50">
                     <img src="images/bubble.png" alt="bubble" width="50">
@@ -63,15 +63,13 @@
                     <img src="images/bubble.png" alt="bubble" width="50">
                 </div>
             </div>
-
         </section>
-        <!-- END HERO -->
-
-        <!-- FEATURES SECTION -->
+        <!------------------------------------------ F E A T U R E S section ------------------------------------------>
         <section class="about" id="about">
             <div class="container">
                 <div class="about-content">
-                    <div class="features-boxcards">
+                    <!-- features cards -->
+                    <div class="boxcards">
                         <div class="card">
                             <i class="fas fa-check"></i>
                             <h5 class="underline">Realistic!</h5>
@@ -97,9 +95,8 @@
                                 durable for years to come</p>
                         </div>
                     </div>
-
-
-                    <div class="features-description">
+                    <!-- features description -->
+                    <div class="description">
                         <h1 class="headline">Your Tank Will Thank You!</h1>
 
                         <p>We've all been there...re-arranging tank decor for the 3rd time this week only
@@ -128,36 +125,28 @@
                 </div>
             </div>
         </section>
-        <!-- END ABOUT US -->
 
-        <!-- GALLERY slideshow -->
+        <!-------------------------------------------- G A L L E R Y section -------------------------------------------->
         <section class="gallery" id="gallery">
             <div class="container">
                 <div class="gallery-content">
+                    <!-- headline + description -->
                     <h1 class="headline">See For Yourself!</h1>
-                    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit, ex! Explicabo
-                        at
-                        eos, velit a aliquid, cupiditate mollitia in placeat aspernatur accusamus quaerat dolorum natus
-                        voluptate optio odit consequuntur. Itaque deleniti at veniam veritatis rerum repudiandae
-                        asperiores
-                        fugiat, totam molestias exercitationem, impedit quisquam hic aliquid obcaecati quas, quaerat
-                        minima
-                        ipsum!</p>
+                    <p class="description">Here's a few recent projects we made for our customers! If you have a custom
+                        project you are interested in please, let's chat!</p>
                     <!-- Slideshow container -->
                     <div class="slideshow-container">
-                        <!-- Full-width images with number and caption text -->
+                        <!-- Images displayed full-width with a number and caption text -->
                         <div class="galleryImage fade">
                             <div class="number-text">1 / 12</div>
                             <img src="/images/image1.jpg" style="width:100%">
                             <div class="caption-text">6ft (200g) tank</div>
                         </div>
-
                         <div class="galleryImage fade">
                             <div class="number-text">2 / 12</div>
                             <img src="images/image2.jpg" style="width:100%">
                             <div class="caption-text">7ft (210g) tank</div>
                         </div>
-
                         <div class="galleryImage fade">
                             <div class="number-text">3 / 12</div>
                             <img src="images/image3.jpg" style="width:100%">
@@ -208,13 +197,11 @@
                             <img src="images/image12.jpg" style="width:100%">
                             <div class="caption-text">40g breeder tank</div>
                         </div>
-
                         <!-- Next/Previous buttons -->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                     <br>
-
                     <!-- dots -->
                     <div style="text-align:center">
                         <span class="dot" onclick="currentSlide(1)"></span>
@@ -234,17 +221,35 @@
             </div>
         </section>
 
+        <!----------------------------------------- P R I C E S section ----------------------------------------->
         <section class="prices" id="prices">
             <div class="container">
                 <div class="prices-content">
                     <div class="card">
-                        <h5 class="tank-size">Tank Size</h5>
+                        <h1 class="tank-size">Tank Size</h1>
                         <h1 class="tank-price">Tank Price</h1>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-------------------------------------------- F A Q section -------------------------------------------->
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="faq-content">
+
+                </div>
+            </div>
+        </section>
+        <!---------------------------------------- C O N T A C T section ---------------------------------------->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="faq-content">
+
+                </div>
+            </div>
+        </section>
+        <!---------------------------------------- J A V A S C R I P T ---------------------------------------->
         <script src="main.js"> </script>
     </body>
 

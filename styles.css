@@ -43,7 +43,7 @@ p {
   font-family: var(--body-font);
   font-size: 1.6rem;
   color: var(--white);
-  margin: 10px auto;
+  margin: 0 auto;
 }
 
 .container {
@@ -53,7 +53,7 @@ p {
   padding: 0 2.4rem;
 }
 
-/* HEADER */
+/********************************************* H E A D E R section *********************************************/
 
 header {
   display: flex;
@@ -80,6 +80,8 @@ header {
   height: 100%;
 }
 
+/*** hamburger menu toggler ***/
+
 .menu-toggle {
   color: var(--white);
   text-shadow: 2px 2px 4px #232225;
@@ -95,6 +97,8 @@ header {
 .menu-toggle:hover {
   color: var(--blue);
 }
+
+/*** FA close menu icon ***/
 
 .fa-times {
   display: none;
@@ -162,7 +166,7 @@ header {
   color: var(--white);
 }
 
-/************ start HERO section ************/
+/********************************************* H O M E section *********************************************/
 
 #hero {
   width: 100%;
@@ -237,7 +241,7 @@ header {
   color: rgba(255, 255, 255, .75);
 }
 
-/* bubbles animation */
+/********************************************* B U B B L E S *********************************************/
 
 .bubbles {
   width: 100vw;
@@ -296,9 +300,7 @@ header {
   width: 50px;
 }
 
-/************ end HERO section ************/
-
-/************ start FEATURES section ************/
+/********************************************* A B O U T section *********************************************/
 
 #about {
   background-color: #2D3134;
@@ -313,7 +315,7 @@ header {
   justify-content: center;
 }
 
-.features-boxcards {
+.about-content .boxcards {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -323,9 +325,10 @@ header {
   gap: 3rem;
 }
 
-.features-boxcards .card {
+.about-content .boxcards .card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 250px;
   height: 250px;
   padding: 2rem;
@@ -335,72 +338,78 @@ header {
   transition: 1s;
 }
 
+/* font-awesome check-mark icon */
+
 .fa-check {
   color: var(--light-green);
   font-size: 4rem;
   text-align: center;
-  margin-bottom: 1rem;
+  text-shadow: 0 0 8px var(--light-green);
 }
 
-.features-boxcards .card p {
+.about-content .boxcards .card p {
   text-align: justify;
   text-justify: distribute;
   font-size: 1.4rem;
-  line-height: 2.2rem;
+  line-height: 2rem;
+  padding: 1rem 0;
 }
 
-.features-boxcards .card h5 {
+.about-content .boxcards .card h5 {
   font-weight: 700;
   font-size: 2rem;
   text-align: center;
   color: var(--light-green);
-  /* small-text-shadow */
-  text-shadow: 1px 1px 10px #000000;
-}
-
-.underline {
+  text-shadow: 0 0 8px var(--light-green);
   position: relative;
 }
 
-.underline::after {
+/* underline after card heading */
+
+.about-content .boxcards .card h5::after {
   content: " ";
   position: absolute;
   background-color: var(--light-green);
-  width: 100%;
-  height: 2px;
-  left: 0;
-  bottom: -3px;
+  width: 80%;
+  height: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  box-shadow: 0px 0px 8px var(--light-green);
 }
 
-.features-description {
+.about-content .description {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   margin-top: 5rem;
 }
+
+/* 'your tank will thank you' */
 
 .headline {
   text-align: center;
   font-size: 3.6rem;
-  margin: 5rem 0;
-  padding: 0px;
+  margin: 3rem 0;
   font-family: 'Poppins';
   color: var(--light-blue);
   text-shadow: 1px 1px 10px #0000007c;
 }
 
-.features-description p {
-  padding: 0 15%;
+.about-content .description p {
+  padding: 0 5%;
   font-size: 1.6rem;
   text-justify: distribute;
   text-align: justify;
 }
 
+/********************************************** G A L L E R Y section **********************************************/
+
 #gallery {
   background-color: #2D3134;
+  align-items: center;
+  justify-content: space-between;
 }
-
-/* GALLERY */
 
 .gallery-content {
   display: flex;
@@ -409,8 +418,6 @@ header {
   justify-content: space-between;
 }
 
-.gallery-content .headline {}
-
 .gallery-content .description {
   width: 70%;
   margin: 0 0 5rem 0;
@@ -418,15 +425,15 @@ header {
 
 /* Slideshow container */
 
-.slideshow-container {
+.gallery-content .slideshow-container {
   max-width: 85%;
   position: relative;
   margin: auto;
 }
 
-/* Hide the images by default */
+/* Hide the gallery images by default */
 
-.galleryImage {
+.slideshow-container .galleryImage {
   display: none;
 }
 
@@ -446,8 +453,6 @@ header {
   transition: 0.5s;
 }
 
-/* Position the "next button" to the right */
-
 .prev {
   left: -45px;
   border-radius: 10px 0 0 10px;
@@ -458,14 +463,10 @@ header {
   border-radius: 0 10px 10px 0;
 }
 
-/* On prev/next arrow hover, add a semi-transparent black background */
-
 .prev:hover, .next:hover {
   background-color: rgba(0, 0, 0, 0.5);
   color: var(--blue)
 }
-
-/* Gallery Image Caption text */
 
 .caption-text {
   color: var(--white);
@@ -479,8 +480,6 @@ header {
   text-align: center;
 }
 
-/* Number text (1/5 etc) */
-
 .number-text {
   color: var(--white);
   text-shadow: 0px 0px 5px #000000;
@@ -489,8 +488,6 @@ header {
   position: absolute;
   top: 0;
 }
-
-/* The dots/bullets/indicators */
 
 .dot {
   cursor: pointer;
@@ -507,12 +504,36 @@ header {
   background-color: #12588659;
 }
 
-/* end FEATURES */
+/*********************************** P R I C E S section **************************************/
+
+#prices {
+  background-color: #2D3134;
+  align-items: center;
+  justify-content: center;
+}
+
+/********************************** F A Q section ********************************************/
+
+#faq {
+  background-color: #2D3134;
+  align-items: center;
+  justify-content: center;
+}
+
+/********************************* C O N T A C T section *************************************/
+
+#contact {
+  background-color: #2D3134;
+  align-items: center;
+  justify-content: center;
+}
+
+/********************************** M E D I A queries ***************************************/
 
 /* screens larger than 1035px */
 
 @media screen and (min-width: 1230px) {
-  /******************* HOME section**************************/
+  /******************* H O M E section *******************/
   .logo {
     flex-shrink: 1;
   }
@@ -563,7 +584,7 @@ header {
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 1));
     font-size: 4rem;
   }
-  /******************* ABOUT section**************************/
+  /******************* A B O U T section *******************/
   .about-content {
     flex-direction: row;
     margin: 5rem 0;
@@ -598,12 +619,24 @@ header {
     animation-name: fade;
     animation-duration: 1.5s;
   }
-  /******************* GALLERY section**************************/
+  /******************* G A L L E R Y section *******************/
+  .gallery-content .headline {
+    margin: initial;
+  }
+  .gallery-content .description {
+    margin: 2rem 0;
+  }
+  /******************* P R I C E S section *******************/
+  #prices {}
+  /******************* F A Q section *******************/
+  #faq {}
+  /******************* C O N T A C T section *******************/
+  #contact {}
 }
 
-/******************* ANIMATIONS **************************/
+/******************* A N I M A T I O N S **************************/
 
-/* gallery picture fade animation */
+/* slide-show gallery picture fade animation */
 
 @-webkit-keyframes fade {
   from {
@@ -623,7 +656,7 @@ header {
   }
 }
 
-/* bubbles animation */
+/* home page bubbles animation */
 
 @keyframes bubble {
   0% {
