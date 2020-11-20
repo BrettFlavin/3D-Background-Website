@@ -1,33 +1,33 @@
-// select element function
+
+/*********************** Element selector *************************************/
+// to select a DOM element
 const selectElement = (element) => {
     return document.querySelector(element);
 };
 
-/***********************************************************************/
-// toggle the nav-link open when the hamburger menu toggle is clicked
+/*********************** Navigation menu ************************************/
+// toggles the 'open' class when the hamburger menu icon is clicked
 let menuToggler = selectElement('.menu-toggle');
 let body = selectElement('body');
-
 menuToggler.addEventListener('click', () => {
     body.classList.toggle('open');
 });
-/***********************************************************************/
 
-/***********************************************************************/
-// SLIDESHOW
+/*********************** Gallery Slideshow ********************************/
 var slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// <-previous and next-> arrows to change slideshow image
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 
-// Thumbnail image controls
+// dot shows current slideshow image + changes the slideshow image when clicked
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
 
+// displays and hides the images when an arrow or dot is clicked
 function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("galleryImage");
@@ -42,5 +42,4 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-} 
-/***********************************************************************/
+}

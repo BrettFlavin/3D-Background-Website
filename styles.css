@@ -16,6 +16,7 @@
   --blue: #18A0FB;
   --light-blue: #A3DBFB;
   --white: #e2f3f5;
+  --background-color: #2D3134;
 }
 
 html {
@@ -41,9 +42,8 @@ a {
 
 p {
   font-family: var(--body-font);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--white);
-  margin: 0 auto;
 }
 
 .container {
@@ -53,7 +53,104 @@ p {
   padding: 0 2.4rem;
 }
 
-/********************************************* H E A D E R section *********************************************/
+/* h1 headline for each section */
+
+.headline {
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 3rem 0 -.1rem 0;
+  padding: 2rem 10rem;
+  font-family: 'Poppins';
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--light-blue);
+  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 1));
+}
+
+/* paragraph description for each section */
+
+.description {
+  padding: 0 8rem;
+  text-justify: distribute;
+  text-align: justify;
+  margin-bottom: 3rem;
+}
+
+/* a collection of cards for features and prices */
+
+.boxcards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 250px;
+  height: 250px;
+  padding: 2rem;
+  background: #2D3134;
+  box-shadow: 10px 10px 16px 0 rgba(0, 0, 0, 0.25), -6px -6px 10px 0 rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  transition: all .5s ease-in-out;
+}
+
+.card p {
+  text-align: justify;
+  text-justify: distribute;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  padding: 2rem 0;
+  text-shadow: -1px -1px 8px rgba(224, 208, 208, 0.644);
+}
+
+.card h5 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  text-align: center;
+  color: var(--light-green);
+  text-shadow: 0 0 8px var(--light-green);
+  position: relative;
+}
+
+/*************** font-awesome icons ****************/
+
+/* menu */
+
+.fa-bars {
+  display: block;
+}
+
+/* close menu */
+
+.fa-times {
+  display: none;
+}
+
+/* check-mark  */
+
+.fa-check {
+  color: var(--light-green);
+  font-size: 4rem;
+  text-align: center;
+  text-shadow: 0 0 8px var(--light-green);
+  margin: 1rem 0;
+}
+
+/************************************************************************************************************/
+
+/******************************************* H E A D E R / N A V *******************************************/
+
+/**********************************************************************************************************/
 
 header {
   display: flex;
@@ -68,8 +165,6 @@ header {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent);
 }
 
-/*** NAVIGATION ***/
-
 .logo {
   width: 150px;
   height: 150px;
@@ -80,7 +175,7 @@ header {
   height: 100%;
 }
 
-/*** hamburger menu toggler ***/
+/*** mobile menu toggle ***/
 
 .menu-toggle {
   color: var(--white);
@@ -98,12 +193,6 @@ header {
   color: var(--blue);
 }
 
-/*** FA close menu icon ***/
-
-.fa-times {
-  display: none;
-}
-
 .nav-list {
   display: flex;
   flex-direction: column;
@@ -118,10 +207,12 @@ header {
   background-color: #585858;
   opacity: 0.9;
   padding: 4.4rem;
-  z-index: 1400;
+  z-index: 2000;
   transform: translateX(-100%);
   transition: transform 0.5s;
 }
+
+/* dark overlay behind nav when menu toggled on */
 
 .nav::before {
   content: " ";
@@ -137,7 +228,8 @@ header {
   transition: opacity 0.5s;
 }
 
-/* .open class toggled on/off by main.js event listener */
+/* .open class is toggled on/off by main.js event listener every time 
+the menu-toggle is clicked */
 
 .open .fa-times {
   display: block;
@@ -162,17 +254,22 @@ header {
   transition: all 0.5s;
 }
 
-.nav-link:focus, .nav-link:hover {
+.nav-link:focus, .nav-link:hover, .nav-link:active {
   color: var(--white);
 }
 
-/********************************************* H O M E section *********************************************/
+/*********************************************************************************************************/
+
+/****************************************** H O M E section *********************************************/
+
+/*******************************************************************************************************/
 
 #hero {
   width: 100%;
   height: 100vh;
   background: url("images/hero.jpg") center no-repeat;
   background-size: cover;
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   text-align: center;
@@ -190,19 +287,17 @@ header {
   right: -100px;
 }
 
-.hero-content h1 {
-  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 1));
-  font-weight: 700;
-  font-size: 3.4rem;
-  letter-spacing: 2px;
-  margin-left: -2px;
-  color: #A3DBFB;
+.hero-content .headline {
+  text-shadow: 0 0 15px rgba(0, 0, 0, .75);
+  font-size: 4rem;
+  margin: 0;
+  padding: 0;
   text-align: left;
 }
 
 .green-text {
   color: var(--light-green);
-  opacity: .85;
+  opacity: .75;
 }
 
 .hero-content .buttons {
@@ -211,7 +306,7 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
-  right: 10px;
+  right: 12px;
 }
 
 .cta-btn {
@@ -225,7 +320,7 @@ header {
   transition: all 0.5s;
 }
 
-.cta-btn:focus, .cta-btn:hover {
+.cta-btn:focus, .cta-btn:hover, .cta-btn:active {
   color: var(--white);
   background-color: var(--blue);
   box-shadow: 0px 0px 10px 0px #000000 inset;
@@ -237,11 +332,12 @@ header {
 
 .more-btn {
   background-color: transparent;
-  box-shadow: inset 0px 0px 0px 2px #A3DBFB;
-  color: rgba(255, 255, 255, .75);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+  box-shadow: inset 0px 0px 0px 2px var(--light-blue);
+  color: var(--white);
 }
 
-/********************************************* B U B B L E S *********************************************/
+/************* animated bubbles *********************/
 
 .bubbles {
   width: 100vw;
@@ -300,10 +396,14 @@ header {
   width: 50px;
 }
 
+/**************************************************************************************************************/
+
 /********************************************* A B O U T section *********************************************/
 
+/************************************************************************************************************/
+
 #about {
-  background-color: #2D3134;
+  background-color: var(--background-color);
   align-items: center;
   justify-content: space-between;
 }
@@ -315,142 +415,60 @@ header {
   justify-content: center;
 }
 
-.about-content .boxcards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: auto;
-  gap: 3rem;
-}
-
-.about-content .boxcards .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 250px;
-  height: 250px;
-  padding: 2rem;
-  background: #2D3134;
-  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
-  border-radius: 25px;
-  transition: 1s;
-}
-
-/* font-awesome check-mark icon */
-
-.fa-check {
-  color: var(--light-green);
-  font-size: 4rem;
-  text-align: center;
-  text-shadow: 0 0 8px var(--light-green);
-}
-
-.about-content .boxcards .card p {
-  text-align: justify;
-  text-justify: distribute;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  padding: 1rem 0;
-}
-
-.about-content .boxcards .card h5 {
-  font-weight: 700;
-  font-size: 2rem;
-  text-align: center;
-  color: var(--light-green);
-  text-shadow: 0 0 8px var(--light-green);
-  position: relative;
-}
-
-/* underline after card heading */
-
-.about-content .boxcards .card h5::after {
-  content: " ";
-  position: absolute;
-  background-color: var(--light-green);
-  width: 80%;
-  height: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -10px;
-  box-shadow: 0px 0px 8px var(--light-green);
-}
-
-.about-content .description {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  margin-top: 5rem;
-}
-
-/* 'your tank will thank you' */
-
-.headline {
-  text-align: center;
-  font-size: 3.6rem;
-  margin: 3rem 0;
-  font-family: 'Poppins';
-  color: var(--light-blue);
-  text-shadow: 1px 1px 10px #0000007c;
-}
-
-.about-content .description p {
-  padding: 0 5%;
-  font-size: 1.6rem;
-  text-justify: distribute;
-  text-align: justify;
-}
+/********************************************************************************************************************/
 
 /********************************************** G A L L E R Y section **********************************************/
 
+/******************************************************************************************************************/
+
 #gallery {
-  background-color: #2D3134;
+  background-color: var(--background-color);
   align-items: center;
-  justify-content: space-between;
 }
 
 .gallery-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-}
-
-.gallery-content .description {
-  width: 70%;
-  margin: 0 0 5rem 0;
+  justify-content: center;
 }
 
 /* Slideshow container */
 
 .gallery-content .slideshow-container {
-  max-width: 85%;
+  max-width: 90%;
   position: relative;
-  margin: auto;
+  margin: 3rem auto;
 }
 
 /* Hide the gallery images by default */
 
-.slideshow-container .galleryImage {
+.galleryImage {
   display: none;
 }
 
-/* Next & previous buttons */
+/* fade-in image */
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* next/previous image slider arrows */
 
 .prev, .next {
+  color: var(--white);
+  font-size: 2.5rem;
   cursor: pointer;
+  user-select: none;
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   width: auto;
-  margin-top: -22px;
   padding: 16px;
-  color: var(--white);
-  font-weight: bold;
-  font-size: 2.5rem;
-  user-select: none;
-  transition: 0.5s;
+  transition: color 0.5s ease;
 }
 
 .prev {
@@ -468,11 +486,10 @@ header {
   color: var(--blue)
 }
 
-.caption-text {
+.galleryImage .caption-text {
   color: var(--white);
   text-shadow: 0px 0px 5px #000000;
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 1.6rem;
   padding: .8rem 1.2rem;
   position: absolute;
   bottom: 8px;
@@ -480,10 +497,10 @@ header {
   text-align: center;
 }
 
-.number-text {
+.galleryImage .number-text {
   color: var(--white);
   text-shadow: 0px 0px 5px #000000;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   padding: .8rem 1.2rem;
   position: absolute;
   top: 0;
@@ -493,26 +510,90 @@ header {
   cursor: pointer;
   height: 2rem;
   width: 2rem;
-  margin: 0 5px;
+  margin: 5px;
   background-color: var(--blue);
   border-radius: 50%;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.5s ease;
 }
 
 .active, .dot:hover {
   background-color: #12588659;
 }
 
-/*********************************** P R I C E S section **************************************/
+/******************************************************************************************************/
+
+/************************************** P R I C E S section ******************************************/
+
+/****************************************************************************************************/
 
 #prices {
-  background-color: #2D3134;
+  background-color: var(--background-color);
   align-items: center;
   justify-content: center;
 }
 
-/********************************** F A Q section ********************************************/
+.prices-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* displays the card's 'gallon' data attribute */
+
+.prices-content .card:before {
+  content: attr(data-gallons);
+  font-size: 5.2rem;
+  font-weight: 700;
+  color: #525b6180;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75), 2px 2px 1px #363636;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  opacity: 1;
+  transition: opacity .7s ease-in-out;
+}
+
+/* displays the card's 'price' data attribute */
+
+.prices-content .card:after {
+  content: attr(data-price);
+  font-size: 5.2rem;
+  font-weight: 700;
+  color: var(--light-green);
+  text-shadow: 0 0 8px var(--light-green);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity .7s ease-in-out;
+}
+
+/* on card hover - move card up slightly, fade out gallons, fade in price */
+
+.prices-content .card:hover, .prices-content .card:focus, .prices-content .card:active {
+  transform: translateY(-20px);
+  box-shadow: 0px 2px 6px 2px rgba(255, 255, 255, 0.3), -10px 12px 12px 2px rgba(0, 0, 0, 0.25);
+}
+
+.prices-content .card:hover:before {
+  opacity: 0;
+}
+
+.prices-content .card:hover:after {
+  opacity: 1;
+}
+
+/**************************************************************************************************/
+
+/************************************** F A Q section ********************************************/
+
+/************************************************************************************************/
 
 #faq {
   background-color: #2D3134;
@@ -520,20 +601,65 @@ header {
   justify-content: center;
 }
 
-/********************************* C O N T A C T section *************************************/
-
-#contact {
-  background-color: #2D3134;
+.faq-content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+/***********************************************************************************************/
+
+/********************************** C O N T A C T section *************************************/
+
+/*********************************************************************************************/
+
+#contact {
+  background-color: var(--background-color);
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/*********************************************************************************************/
+
 /********************************** M E D I A queries ***************************************/
+
+/*******************************************************************************************/
 
 /* screens larger than 1035px */
 
 @media screen and (min-width: 1230px) {
-  /******************* H O M E section *******************/
+  .headline {
+    font-size: 4.8rem;
+  }
+  .hero-content .headline {
+    font-size: 6.2rem;
+  }
+  /* paragraph description for each section */
+  .description {
+    padding: 0 8rem;
+    text-justify: distribute;
+    text-align: justify;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    max-width: 70%;
+  }
+  .card p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .card h5 {
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
   .logo {
     flex-shrink: 1;
   }
@@ -541,7 +667,6 @@ header {
     flex-grow: 1;
   }
   .menu-toggle {
-    /* flex-shrink: 1; */
     visibility: hidden;
     pointer-events: none;
     min-width: 100px;
@@ -570,62 +695,21 @@ header {
     margin: 0px 45px;
   }
   .nav-link {
-    font-size: 2.2rem;
-    letter-spacing: 1px;
-    margin-left: -1px;
-  }
-  .nav-link:focus, .nav-link:hover {
-    text-decoration: underline;
-  }
-  .nav-link:active {
-    color: var(--white);
-  }
-  .hero-content h1 {
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 1));
-    font-size: 4rem;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-left: -2px;
   }
   /******************* A B O U T section *******************/
-  .about-content {
-    flex-direction: row;
-    margin: 5rem 0;
+  .about-content .boxcards .card {
+    width: 350px;
+    height: 350px;
+    /* justify-content: center; */
   }
-  .features-boxcards {
-    align-items: flex-start;
-    margin: 0;
-  }
-  .features-boxcards .card {
-    width: 280px;
-    height: 280px;
-  }
-  .features-boxcards .card p {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-  }
-  .features-description {
-    margin: 0;
-  }
-  .features-description .headline {
-    align-self: center;
-    margin: initial;
-  }
-  .features-description p {
-    align-items: flex-start;
-    margin-top: 0;
-    padding: 0 5rem;
-  }
-  .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
+  .about-content .boxcards .card .fa-check {
+    font-size: 5.4rem;
   }
   /******************* G A L L E R Y section *******************/
-  .gallery-content .headline {
-    margin: initial;
-  }
-  .gallery-content .description {
-    margin: 2rem 0;
-  }
+  #gallery {}
   /******************* P R I C E S section *******************/
   #prices {}
   /******************* F A Q section *******************/
@@ -634,7 +718,7 @@ header {
   #contact {}
 }
 
-/******************* A N I M A T I O N S **************************/
+/************************ A N I M A T I O N S **************************/
 
 /* slide-show gallery picture fade animation */
 
